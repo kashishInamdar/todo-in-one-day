@@ -1,0 +1,33 @@
+.container{
+    width: 500px;
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px 20px;
+}
+.input-box{
+    display: block;
+    margin: 20px 0;
+    font-size: 20px;
+    width: 100%;
+    outline:none;
+    border: 2px solid violet;
+}
+.select-box{
+    display: block;
+    margin: 20px 0;
+    font-size: 20px;
+    width: 100%;
+    padding: 3px 10px;
+    border: 2px solid violet;
+    outline: none;
+}
+button{
+    background-color: violet;
+    padding: 2px 5px;
+    margin: 2px 5px;
+    border: 1px solid rgb(239, 40, 239);
+    border-radius: 2px;
+    font-size: 20px;
+    
+
+}

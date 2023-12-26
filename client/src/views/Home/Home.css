@@ -1,0 +1,43 @@
+.task-container{
+    position: relative;
+   
+}
+.title{
+    text-align: center;
+
+}
+
+.task-card{
+    width: 50vw;
+    margin: 15px auto;
+    padding: 2px 20px;
+    background-color: violet;
+    border: 2px solid rgb(255, 34, 255);
+    border-radius: 10px;
+    position: relative;
+}
+.priority{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.delete{
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    cursor: pointer;
+
+}
+.edit{
+    position: absolute;
+    bottom: 5px;
+    right: 45px;
+    cursor: pointer;
+}
+.add-btn{
+    font-size: 40px;
+    position: absolute;
+    top: -50px;
+    right: 60vh;
+    cursor: pointer;
+}
