@@ -3,10 +3,9 @@ import "./Home.css"
 import axios from "axios"
 import {Link} from "react-router-dom"
 
+
 const Home =()=>{
-
     const [tasks , setTasks] = useState([])
-
     const loadTask = async() =>{
         
         const respons = await axios.get("/api/tasks")
@@ -16,14 +15,14 @@ const Home =()=>{
 
     const deleteTask = async (_id)=>{
        const respons =  await axios.delete(`/api/tasks/${_id}`)
-       
-
        if(respons.data.success){
         loadTask()
        }
-
-
     }
+
+    const updateTask = (_id)=>{
+        window.location.href = `/updateTask/${_id}`
+    } 
 
     useEffect(()=>{
         loadTask()
@@ -47,7 +46,7 @@ const Home =()=>{
                             <span className="delete" onClick={()=>{
                                 deleteTask(_id)
                             }}>🗑️</span>
-                            <span className="edit">🖊️</span>
+                            <span className="edit" onClick={()=>{updateTask(_id)}}>🖊️</span>
                         </div>
                     )
                 })

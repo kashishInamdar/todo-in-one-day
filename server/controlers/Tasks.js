@@ -45,6 +45,25 @@ const GetApiTasks = async (req, res) => {
 
 }
 
+const GetApiTasksById = async (req, res) => {
+    const { id } = req.params
+    try {
+        const task = await Task.findOne({ _id: id })
+
+        res.json({
+            success: true,
+            data: task,
+            massage: "Task Show"
+        })
+    }catch(err){
+        res.json({
+            success:true,
+            massage : err.massage
+        })
+    }
+    
+}
+
 const PutApiTasks = async (req, res) => {
     const { id } = req.params;
     const { title, description, priority } = req.body
@@ -59,18 +78,18 @@ const PutApiTasks = async (req, res) => {
         })
 
     const updateTask = await Task.findById(id);
-    try{
+    try {
         res.json({
             success: true,
             data: updateTask,
             massage: "Task Update successFully"
         });
     }
-    catch(err){
+    catch (err) {
         res.json({
             success: false,
             massage: err.massege
-        }); 
+        });
     }
 }
 
@@ -98,4 +117,4 @@ const DeleteApiTask = async (req, res) => {
 
 }
 
-export { PostApiTask, GetApiTasks, PutApiTasks, DeleteApiTask }
+export { PostApiTask, GetApiTasks, GetApiTasksById, PutApiTasks, DeleteApiTask }

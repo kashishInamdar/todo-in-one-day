@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './views/Home/Home';
 import AddTask from './views/AddTask/AddTask';
+import UpdateTsak from './views/UpdateTsak/UpdateTsak';
 import {createBrowserRouter , RouterProvider } from "react-router-dom"
 
 
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     {
         path : "/add-task",
         element : <AddTask />
+    },
+    {
+        path : "/updateTask/:_id",
+        element : <UpdateTsak />
     }
 ])
 
